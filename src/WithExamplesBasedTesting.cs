@@ -9,17 +9,17 @@ public class WithExamplesBasedTesting
         var remainder = n;
         var factors = new List<int>();
 
-        if (remainder > 1)
+        var divisor = 2;
+        while (remainder > 1)
         {
-            while (remainder % 2 == 0)
+            while (remainder % divisor == 0)
             {
-                factors.Add(2);
-                remainder /= 2;
+                factors.Add(divisor);
+                remainder /= divisor;
             }
+
+            divisor++;
         }
-        
-        if(remainder > 1)
-            factors.Add(remainder);
         
         return factors;
     }
