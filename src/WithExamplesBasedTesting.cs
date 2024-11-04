@@ -4,7 +4,7 @@ namespace PrimeFactorsKata;
 
 public class WithExamplesBasedTesting
 {
-    private static List<int> FactorsOf(int n) => throw new NotImplementedException();
+    private static List<int> FactorsOf(int n) => [];
 
     [Fact]
     void factors_of_1()
