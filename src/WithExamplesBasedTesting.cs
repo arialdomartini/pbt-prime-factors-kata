@@ -5,7 +5,7 @@ namespace PrimeFactorsKata;
 public class WithExamplesBasedTesting
 {
     private static List<int> FactorsOf(int n) =>
-        n == 2 ? [2] : [];
+        n > 1 ? [n] : [];
 
     [Fact]
     void factors_of_1()
