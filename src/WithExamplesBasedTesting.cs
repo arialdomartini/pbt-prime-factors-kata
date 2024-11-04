@@ -11,7 +11,7 @@ public class WithExamplesBasedTesting
 
         if (remainder > 1)
         {
-            if (remainder % 2 == 0)
+            while (remainder % 2 == 0)
             {
                 factors.Add(2);
                 remainder /= 2;
