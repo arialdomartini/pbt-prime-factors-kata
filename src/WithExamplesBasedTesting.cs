@@ -4,7 +4,8 @@ namespace PrimeFactorsKata;
 
 public class WithExamplesBasedTesting
 {
-    private static List<int> FactorsOf(int n) => [];
+    private static List<int> FactorsOf(int n) =>
+        n == 2 ? [2] : [];
 
     [Fact]
     void factors_of_1()
@@ -53,7 +54,7 @@ public class WithExamplesBasedTesting
     {
         Assert.Equal([2, 2, 2], FactorsOf(8));
     }
-    
+
     [Fact]
     void factors_of_9()
     {
