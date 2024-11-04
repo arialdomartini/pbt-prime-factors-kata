@@ -4,8 +4,25 @@ namespace PrimeFactorsKata;
 
 public class WithExamplesBasedTesting
 {
-    private static List<int> FactorsOf(int n) =>
-        n > 1 ? [n] : [];
+    private static List<int> FactorsOf(int n)
+    {
+        var remainder = n;
+        var factors = new List<int>();
+
+        if (remainder > 1)
+        {
+            if (remainder % 2 == 0)
+            {
+                factors.Add(2);
+                remainder /= 2;
+            }
+        }
+        
+        if(remainder > 1)
+            factors.Add(remainder);
+        
+        return factors;
+    }
 
     [Fact]
     void factors_of_1()
