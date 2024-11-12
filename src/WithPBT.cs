@@ -20,8 +20,26 @@ internal static class PrimeNumberTestExtensions
 
 public class WithPBT
 {
-    private static List<int> FactorsOf(int n) => throw new NotImplementedException();
+    private static List<int> FactorsOf(int n)
+    {
+        var remainder = n;
+        var factors = new List<int>();
 
+        var divisor = 2;
+        while (remainder > 1)
+        {
+            while (remainder % divisor == 0)
+            {
+                factors.Add(divisor);
+                remainder /= divisor;
+            }
+
+            divisor++;
+        }
+        
+        return factors;
+    }
+    
     [Property]
     bool boolean_factorization_in_prime_numbers(PositiveInt positiveNumber)
     {
